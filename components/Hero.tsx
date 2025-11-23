@@ -2,6 +2,16 @@ import React from 'react';
 import Button from './ui/Button';
 import Reveal from './ui/Reveal';
 
+// Add type definition for the custom element to avoid TS errors
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'vturb-smartplayer': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & { id?: string };
+      [elemName: string]: any;
+    }
+  }
+}
+
 const Hero: React.FC = () => {
   const scrollToOffer = () => {
     const section = document.getElementById('oferta');
@@ -24,18 +34,28 @@ const Hero: React.FC = () => {
             </h1>
           </Reveal>
 
-          <Reveal delay={0.2}>
-            <div className="w-24 h-1 bg-gold rounded-full mx-auto"></div>
+          {/* Video Player */}
+          <Reveal delay={0.2} width="100%">
+            <div className="w-full flex justify-center py-2">
+              <vturb-smartplayer 
+                id="vid-69232c26b4565a02eb35e78b" 
+                style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px' }}
+              ></vturb-smartplayer>
+            </div>
           </Reveal>
 
           <Reveal delay={0.3}>
+            <div className="w-24 h-1 bg-gold rounded-full mx-auto"></div>
+          </Reveal>
+
+          <Reveal delay={0.4}>
             <p className="text-gray-300 text-lg md:text-2xl leading-relaxed font-light max-w-2xl mx-auto">
               A advocacia está passando pela maior mudança dos últimos anos. 
               Esta Black reúne tudo o que você precisa para atuar com previsibilidade, autoridade e liberdade, alinhado às novas diretrizes estratégicas da OAB.
             </p>
           </Reveal>
 
-          <Reveal delay={0.4}>
+          <Reveal delay={0.5}>
             <div className="mt-4">
               <Button text="Garantir meu acesso agora" className="px-12 py-5 text-lg" onClick={scrollToOffer} />
             </div>
