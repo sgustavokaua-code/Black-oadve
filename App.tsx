@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Hero from './components/Hero';
 import Deliverables from './components/Deliverables';
@@ -5,6 +6,7 @@ import Bonuses from './components/Bonuses';
 import CentralJuridica from './components/CentralJuridica';
 import Offer from './components/Offer';
 import Guarantee from './components/Guarantee';
+import FAQ from './components/FAQ';
 import Closing from './components/Closing';
 
 const App: React.FC = () => {
@@ -16,6 +18,7 @@ const App: React.FC = () => {
       <CentralJuridica />
       <Offer />
       <Guarantee />
+      <FAQ />
       <Closing />
       
       {/* Simple Footer */}

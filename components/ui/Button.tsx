@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({ text, onClick, className = '', fullWidt
       <ArrowRight className="w-5 h-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
       
       {/* Shine effect overlay */}
-      <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/30 to-transparent z-0" />
+      <div className="absolute inset-0 -translate-x-full group-hover:animate-shimmer bg-gradient-to-r from-transparent via-white/50 to-transparent z-0" />
     </button>
   );
 };
